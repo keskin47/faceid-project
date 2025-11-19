@@ -1,0 +1,69 @@
+# ============================
+#  FACEID PROJECT - .gitignore
+#  Author: Bünyamin Keskin
+#  Description: Ignore build, cache, logs, and large files
+# ============================
+
+# ---- Python cache & build ----
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.egg
+*.egg-info/
+*.spec
+build/
+dist/
+pip-wheel-metadata/
+.env
+.venv/
+venv/
+ENV/
+env.bak/
+.idea/
+.vscode/
+.DS_Store
+
+# ---- Logs & Backups ----
+logs/
+*.log
+*.bak
+*.tmp
+
+# ---- Models & Large Files ----
+models/
+*.onnx
+*.h5
+*.pkl
+*.pt
+*.pth
+*.tflite
+
+# ---- Data files ----
+data/app/face_db.pkl
+data/backups/
+outputs/
+*.csv
+
+# ---- Configuration overrides ----
+# (default.yaml version-controlled, local configs ignored)
+configs/*.local.yaml
+
+# ---- Executables / Binaries ----
+*.exe
+*.bat
+*.sh
+
+# ---- Jupyter notebooks ----
+*.ipynb_checkpoints
+.ipynb_checkpoints/
+
+# ---- OS / Editor files ----
+Thumbs.db
+ehthumbs.db
+desktop.ini
+$RECYCLE.BIN/
+*.swp
+*.swo
+*.orig

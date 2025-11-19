@@ -1,0 +1,22 @@
+# FaceID – Gereksinimler
+# Bu dosya, projeyi çalıştırmak için gerekli Python paketlerini listeler.
+
+# --- Temel Kütüphaneler ---
+numpy>=1.23.0
+pandas>=1.5.0
+opencv-python>=4.7.0
+PyYAML>=6.0
+openpyxl>=3.1.0
+
+# --- Derin Öğrenme ve Model Yükleme ---
+torch>=2.0.0
+onnx>=1.14.0
+onnxruntime>=1.16.0
+insightface>=0.7.3
+
+# --- Sistem ve Loglama ---
+tqdm>=4.65.0
+
+# --- İsteğe Bağlı ---
+# Eğer GUI entegrasyonu yapılacaksa:
+# PyQt5>=5.15.0

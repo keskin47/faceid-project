@@ -1,0 +1,47 @@
+# ===============================
+# FaceID Sistemi - Varsayılan Ayar Dosyası
+# ===============================
+
+# ---------- MODEL AYARLARI ----------
+model:
+  name: "buffalo_l"                             # Kullanılan InsightFace modeli
+  providers: ["CUDAExecutionProvider", "CPUExecutionProvider"]  # GPU veya CPU çalışma sağlayıcıları
+  det_size: [640, 640]                          # RetinaFace modelinin giriş çözünürlüğü
+  embedding_size: 512                           # ArcFace tarafından üretilen yüz vektörünün boyutu
+
+# ---------- DOSYA VE DİZİN AYARLARI ----------
+paths:
+  excel_file: "data/app/ogrenci_listesi.xlsx"   # Öğrenci listesi Excel dosyasının yolu
+  database_file: "data/app/face_db.pkl"         # Yüz embedding veritabanı dosyası
+  backup_dir: "data/app/backups"                # ExcelManager tarafından kullanılan yedekleme klasörü
+  log_dir: "logs"                               # Günlük (log) dosyalarının kaydedileceği dizin
+  output_dir: "outputs"                         # Uygulama çıktı dosyalarının kaydedileceği dizin
+
+# ---------- KAMERA AYARLARI ----------
+camera:
+  mode: "auto"                                  # Kamera modu: auto | internal | external | ip
+  source: 0                                     # Varsayılan kamera kaynağı (0 = dahili kamera)
+  width: 640                                    # Görüntü genişliği (piksel)
+  height: 480                                   # Görüntü yüksekliği (piksel)
+  fps_limit: 30.0                               # Maksimum kare/saniye (FPS) limiti
+  reconnect_backoff: 1.0                        # Hata sonrası yeniden bağlanma süresi (saniye)
+  custom_url: ""                                # IP kamera bağlantı adresi (RTSP/HTTP linki)
+
+# ---------- YOKLAMA AYARLARI ----------
+attendance:
+  preview_time_sec: 10                          # Yoklama önizleme süresi (saniye)
+  allow_unknown_faces: false                    # Tanınmayan yüzlerin işlenmesine izin verilip verilmeyeceği
+  recheck_delay_sec: 5                          # Aynı kişiyi tekrar kontrol etmeden önce bekleme süresi (saniye)
+
+# ---------- YÜZ VERİTABANI AYARLARI ----------
+face_db:
+  threshold: 0.38                               # Tanıma eşiği (cosine similarity)
+  detailed_margin: 0.05                         # Eşik çevresindeki detaylı inceleme aralığı
+  max_per_person: null                          # Her kişi için tutulacak maksimum embedding sayısı (None = sınırsız)
+
+# ---------- GÜNLÜK (LOG) AYARLARI ----------
+logging:
+  level: "INFO"                                 # Günlük ayrıntı seviyesi: DEBUG | INFO | WARNING | ERROR | CRITICAL
+  rotate: true                                  # Log dosyası döndürme özelliğini etkinleştir
+  max_bytes: 5242880                            # Tek bir log dosyasının maksimum boyutu (5 MB)
+  backup_count: 5                               # Saklanacak maksimum eski log dosyası sayısı
